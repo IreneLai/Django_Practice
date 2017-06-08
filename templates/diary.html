@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+恭喜提交~~~</br>
+{% for d in diarys %}
+    {{d.id}}</br>
+    {{d.title}}</br>
+    {{d.date}}</br>
+    {{d.weather}}</br>
+    <button type="button" name="{{d.id}} " onclick="alert('{{d.id}}')">Delete{{d.id}}</button>
+    </br>
+{% endfor %}
+</body>
+</html>

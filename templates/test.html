@@ -1,0 +1,40 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I come from template!!</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <!--兩個大括號，來顯示變數current_time-->
+        <div>
+        <!--過濾器會使用|管道符號(pipe)來接收前面的資料並做處理-->
+        {{ restaurants|first|length }}
+        <p>本餐廳共有{{ foods|length }}道菜</p>
+            {% for food in foods %}
+            <h3>第{{ forloop.counter }}道食物</h3>
+                食物名稱: {{ food.name }} </br>
+                食物名稱: {{ food.price }} </br>
+                食物會辣？ {% if food.is_spicy %} 辣 {% else %} 不辣 {% endif %} </br>
+            {% empty %}
+                <p>本餐廳啥都沒賣！</p>
+            {% endfor %}
+            </br></br>
+            {% for key,value in food1.items %}
+                {{key}} : {{value}} </br>
+            {% endfor %}
+
+
+
+        </div>
+    </body>
+</html>
